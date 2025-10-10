@@ -5,11 +5,8 @@ suppressPackageStartupMessages({
   library(magick)
 })
 
-#module load GCCcore/13.3.0 ImageMagick/7.1.1-38
-#export PKG_CONFIG_PATH=$EBROOTIMAGEMAGICK/lib/pkgconfig:$PKG_CONFIG_PATH
-#export LD_LIBRARY_PATH=$EBROOTIMAGEMAGICK/lib:$LD_LIBRARY_PATH
 
-plot_side_by_side_groups_with_metaplot <- function(
+doEnrichedHeatmaps <- function(
     mats_groups, titles_groups, out_dir,
     file_name = "two_groups_side_by_side.pdf",
     group_names = NULL,
@@ -162,34 +159,6 @@ plot_side_by_side_groups_with_metaplot <- function(
   message("Wrote: ", out_file)
   invisible(list(file = out_file, colors = col_fun))
 }
-
-
-
-
-g1_mats   <- list(ipa_matrix, polyA_matrix, utr3_matrix)
-g1_titles <- c("IPA Sites", "Poly(A) Sites", "3' UTR Sites")
-
-g2_mats   <- list(ipa_matrix, polyA_matrix, utr3_matrix)
-g2_titles <- c("IPA Sites 2", "Poly(A) Sites 2", "3' UTR Sites 2")
-
-
-plot_side_by_side_groups_with_metaplot(
-  mats_groups   = list(g1_mats, g2_mats),
-  titles_groups = list(g1_titles, g2_titles),
-  group_names   = c("Condition A", "Condition B"),
-  out_dir       = "/Users/jaspreet/Downloads/",
-  file_name     = "two_groups_side_by_side.pdf",
-  legend_mode = "capped", 
-  legend_q_hi = 0.90, 
-  clip_high_q = 0.95,
-  width_per_group = 2.3,
-  height_per_panel = 2
-)
-
-
-
-
-
 
 
 
