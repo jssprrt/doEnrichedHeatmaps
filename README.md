@@ -24,7 +24,7 @@ All heatmaps share **one global color scale**. A **single legend column** on the
 install.packages("circlize")
 if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
 BiocManager::install("ComplexHeatmap")
-install.packages("magick")  # optional; used in some environments
+install.packages("magick")  
 ```
 ---
 # Usage
