@@ -1,6 +1,6 @@
-# Side-by-Side Heatmaps with Metaplots (R)
+# Enriched Heatmaps with Metaplots (R)
 
-Generate publication-ready **side-by-side** heatmap columns for multiple groups of matrices.  
+Generate publication ready **side-by-side** heatmap columns for multiple groups of matrices.  
 Each column shows a **single metaplot** (column means) above its stacked heatmaps.  
 All heatmaps share **one global color scale**. A **single legend column** on the right shows the signal palette and metaplot line keys.
 
