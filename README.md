@@ -43,7 +43,7 @@ g1_titles <- c("IPA Sites", "Poly(A) Sites", "3' UTR Sites")
 g2_mats   <- list(ipa_matrix, polyA_matrix, utr3_matrix)
 g2_titles <- c("IPA Sites 2", "Poly(A) Sites 2", "3' UTR Sites 2")
 
-plot_side_by_side_groups_with_metaplot(
+doEnrichedHeatmaps(
   mats_groups   = list(g1_mats, g2_mats),
   titles_groups = list(g1_titles, g2_titles),
   group_names   = c("Condition A", "Condition B"),
@@ -66,7 +66,7 @@ plot_side_by_side_groups_with_metaplot(
 # Function
 
 ```r
-plot_side_by_side_groups_with_metaplot(
+doEnrichedHeatmaps(
   mats_groups,                # list(list(M1,...), list(M1b,...), ...)
   titles_groups,              # list(c("t1","t2",...), c("t1b","t2b",...))
   out_dir,
@@ -91,7 +91,10 @@ plot_side_by_side_groups_with_metaplot(
 # Notes
 
 **Constraint:** all matrices in all groups must share the same number of columns.
+
 Rows can be auto-sorted by decreasing row mean per matrix.
+
 Color scale is computed globally across all groups.
+
 To avoid faint lines at the bottom of metaplots, the function uses `cairo_pdf` and padded ranges.
 
