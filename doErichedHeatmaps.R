@@ -66,8 +66,10 @@ doEnrichedHeatmaps <- function(
     k <- length(mats)
     line_cols <- if (k <= 3) c("#E41A1C","#377EB8","#4DAF4A")[seq_len(k)] else grDevices::hcl.colors(k, "Dark 3")
     yr <- range(unlist(means_list), na.rm = TRUE)
-    normalize01 <- function(v) if (diff(yr) == 0) rep(0.5, length(v)) else (v - yr[1]) / diff(yr)
+    yr_diff <- diff(yr)
     top_meta <- HeatmapAnnotation(
+      Top = function(index) {
+        normalize01 <- function(v) if (yr_diff == 0) rep(0.5, length(v)) else (v - yr[1]) / yr_diff
       Top = function(index) {
         pushViewport(viewport())
         grid.text(gname, x = unit(0, "npc"), y = unit(1, "npc") - unit(1, "mm"),
