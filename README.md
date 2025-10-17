@@ -37,11 +37,11 @@ suppressPackageStartupMessages({
   library(magick)
 })
 
-g1_mats   <- list(ipa_matrix, polyA_matrix, utr3_matrix)
-g1_titles <- c("IPA Sites", "Poly(A) Sites", "3' UTR Sites")
+g1_mats   <- list(matrix1, matrix2, matrix3)
+g1_titles <- c("mat1", "mat2", "mat3")
 
-g2_mats   <- list(ipa_matrix, polyA_matrix, utr3_matrix)
-g2_titles <- c("IPA Sites 2", "Poly(A) Sites 2", "3' UTR Sites 2")
+g2_mats   <- list(matrix1, matrix2, matrix3)
+g2_titles <- c("mat1", "mat2", "mat3")
 
 doEnrichedHeatmaps(
   mats_groups   = list(g1_mats, g2_mats),
@@ -70,7 +70,7 @@ doEnrichedHeatmaps(
   mats_groups,                # list(list(M1,...), list(M1b,...), ...)
   titles_groups,              # list(c("t1","t2",...), c("t1b","t2b",...))
   out_dir,
-  file_name = "two_groups_side_by_side.pdf",
+  file_name = "sample_output.pdf",
   group_names = NULL,
   order_rows_by_rowmean = TRUE,
   palette = c("white","blue"),
@@ -88,6 +88,12 @@ doEnrichedHeatmaps(
 ```
 ---
 
+# Example Output
+
+<p align="left">
+  <img src="sample_ouput.png" alt="plot" width="500" height= "500">
+</p>   
+
 # Notes
 
 **Constraint:** all matrices in all groups must share the same number of columns.
@@ -97,4 +103,6 @@ Rows can be auto-sorted by decreasing row mean per matrix.
 Color scale is computed globally across all groups.
 
 To avoid faint lines at the bottom of metaplots, the function uses `cairo_pdf` and padded ranges.
+
+
 
