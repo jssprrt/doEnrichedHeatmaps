@@ -91,7 +91,7 @@ doEnrichedHeatmaps(
 # Example Output
 
 <p align="left">
-  <img src="sample_output.jpg" alt="plot" width="500" height= "500">
+  <img src="sample_output.jpg" alt="plot" width="380" height= "500">
 </p>   
 
 # Notes
